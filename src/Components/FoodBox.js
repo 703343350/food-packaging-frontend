@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router";
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Cart from "./Cart";
 
 const notify = () => {
   toast.success('Item has been added to cart', {
@@ -19,9 +21,11 @@ const notify = () => {
 
 function FoodBox({ imgSrc, title, price }) {
 
-  function handleClick(e) {
-    
+  const navigate = useNavigate();
+  function handleClick(e,item) {
     e.preventDefault();
+    navigate('/cart',{state:[item]})
+    
    // notify();
 
   };
@@ -43,7 +47,7 @@ function FoodBox({ imgSrc, title, price }) {
       </div>
 
       <div className="cart-btn">
-        <button onClick={handleClick} className="btn">
+        <button onClick={(e) => handleClick(e,{ imgSrc, title, price })} className="btn">
           Add to cart
         </button>
         {/* <button onClick={notify} className="btn">Add to cart</button> */}

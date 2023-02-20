@@ -17,12 +17,12 @@ function TopSect() {
 
       
 
-      <div className="search-box">
+      {/* <div className="search-box">
         <input type="text" placeholder="Search food..." />
         <i>
           <FaSearch />
         </i>
-      </div>
+      </div> */}
     </div>
   );
 }
