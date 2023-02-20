@@ -1,6 +1,6 @@
 import React from "react";
 import { FaSearch } from "react-icons/fa";
-import user from "../img/user.png";
+import user from "../img/profile.jpg";
 
 
 function TopSect() {
@@ -11,7 +11,7 @@ function TopSect() {
         <div className="user-img">
           <img src={user} alt="user" />
         </div>
-        <p className="user-name">Welcome👋</p>
+        <p className="user-name">Welcome User</p>
 
       </div>
 

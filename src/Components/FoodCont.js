@@ -16,7 +16,7 @@ function FoodCont() {
       <div className="foodcontainer">
         <div className="left-side">
           <div className="cards">
-            <div className="all">
+            {/* <div className="all">
               <div className="varieties">
                 <Link to="/" className="var-btn">
                   All
@@ -34,21 +34,21 @@ function FoodCont() {
                   Desert
                 </Link>
               </div>
-            </div>
+            </div> */}
 
             <main>
-              <FoodBox imgSrc={card} title={"All 1"} price={"$20"} />
-              <FoodBox imgSrc={afri} title={"All 2"} price={"$10"} />
-              <FoodBox imgSrc={ital} title={"All 3"} price={"$5"} />
-              <FoodBox imgSrc={chine} title={"All 4"} price={"$7"} />
-              <FoodBox imgSrc={card} title={"All 5"} price={"$10"} />
-              <FoodBox imgSrc={card} title={"All 6"} price={"$15"} />
+              <Link to="/foodDetail" state={{name:"Food Item 1" , price:"Rs.10", img:chine}}><FoodBox imgSrc={chine} title={"Food Item 1"} price={"Rs.20"} /></Link>
+              <Link to="/foodDetail"><FoodBox imgSrc={afri} title={"Food Item 2"} price={"Rs.10"} /></Link>
+              <Link to="/foodDetail"><FoodBox imgSrc={ital} title={"Food Item 3"} price={"Rs.5"} /></Link>
+              <Link to="/foodDetail"><FoodBox imgSrc={chine} title={"Food Item 4"} price={"Rs.7"} /></Link>
+              <Link to="/foodDetail"><FoodBox imgSrc={afri} title={"Food Item 5"} price={"Rs.10"} /></Link>
+              <Link to="/foodDetail"><FoodBox imgSrc={ital} title={"Food Item 6"} price={"Rs.15"} /></Link>
             </main>
           </div>
         </div>
-        <div className="right-side">
+        {/* <div className="right-side">
           <PaymentSect />
-        </div>
+        </div> */}
       </div>
     </>
   );
