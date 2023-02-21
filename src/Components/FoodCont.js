@@ -8,9 +8,11 @@ import ital from "../img/ital.jpg";
 import PaymentSect from "./PaymentSect";
 import { Link } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
-import food from '../img/bckgrnd.avif'
-import ingred from '../img/ingred.jpg'
-import axios from 'axios'
+import food from '../img/bckgrnd.avif';
+import ingred from '../img/ingred.jpg';
+import instructions from '../img/instructions.jpeg';
+import ingredien from '../img/ingredien.avif';
+
 
 
 
@@ -85,7 +87,7 @@ function FoodCont() {
             <div className="top-section1" >
         <div className="search-box">
         <input type="text" placeholder="Search food..."  value={input} onChange={handleInput}/>
-        <i>
+        <i>   
           <FaSearch />
         </i>
         </div>
@@ -99,7 +101,7 @@ function FoodCont() {
            <div style={{color:'white'}}>{ingredients}</div>
            </div>
            <br/>
-           <div className="ingredients" style={{backgroundImage:`url(${ingred})`,backgroundRepeat:'no-repeat',backgroundSize:'cover', border:'5px solid #FE555F',padding:'20px',borderRadius:'6px',marginTop:'12px'}}>
+           <div className="ingredients" style={{backgroundImage:`url(${ingredien})`,backgroundRepeat:'no-repeat',backgroundPosition: 'center',backgroundSize:'cover', border:'5px solid #a5a4a9',padding:'20px',borderRadius:'6px',marginTop:'12px'}}>
 
            <h4 style={{marginLeft:'44%',marginTop:'-4%',fontSize:'27px',backgroundColor:'white',width:'20%',border:'5px solid #FE555F'}}>INSTRUCTIONS</h4>
            <div style={{color:'white'}}>{recipe}</div>
