@@ -7,13 +7,13 @@ import { useNavigate } from "react-router-dom";
 
 function PaymentSect(props) {
   const [state, setState] = useState({ count: 1 });
-  console.log("hhhj", props);
+  
   const [cartList, setCart] = useState(props.cartList);
   const [total, setTotal] = useState(0);
   function handleDelete(i) {
-    console.log("asdsad", i);
+    
     const index = cartList.indexOf(i);
-    console.log("index", index);
+   
     setCart(cartList.splice(index, 1));
   }
   // const notify = () => {

@@ -12,6 +12,7 @@ import food from '../img/bckgrnd.avif';
 import ingred from '../img/ingred.jpg';
 import instructions from '../img/instructions.jpeg';
 import ingredien from '../img/ingredien.avif';
+import axios from 'axios'
 
 
 
