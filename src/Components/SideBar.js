@@ -43,16 +43,20 @@ function SideBar() {
         <Link to="/">
           <Icon icon={<IoIosHelpCircle title="FAQs" />} />
         </Link>
-        <Icon icon={<FaCog title="Settings" />} />
+        <Link to="/">
+          <Icon icon={<FaCog title="Settings" />} />
+        </Link>
       </ul>
 
-      <ul className="bottom-menu">
-        <Icon
-          onClick={handleLogOut}
-          style={{ cursor: "pointer" }}
-          icon={<FaSignOutAlt />}
-          title="Sign Out"
-        />
+      <ul className="bottom-menu" style={{ zindex: 100000 }}>
+        <Link to="/" onClick={handleLogOut}>
+          <Icon
+            onClick={handleLogOut}
+            style={{ cursor: "pointer" }}
+            icon={<FaSignOutAlt />}
+            title="Sign Out"
+          />
+        </Link>
       </ul>
     </header>
   );

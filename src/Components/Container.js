@@ -3,7 +3,6 @@ import "./container.css";
 import TopSect from "./TopSect";
 import FoodCont from "./FoodCont";
 
-
 function Container() {
   return (
     <div className="container">
