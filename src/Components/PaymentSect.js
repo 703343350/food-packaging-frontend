@@ -137,6 +137,9 @@ function PaymentSect(props) {
           </figure>
         </div>
         }
+        {cartList.length==0 && <div>
+            <h3>No Items Added Into The Cart</h3>
+          </div>}
       </div>
     </>
   );
