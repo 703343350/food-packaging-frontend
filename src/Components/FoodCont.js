@@ -96,17 +96,16 @@ function FoodCont() {
         <br/>
         <div>
           
-          <h3 style={{fontSize:'29px',fontWeight:'800'}}><u>RECIPE: {name}</u></h3><br/>
-          <div className="ingredients" style={{backgroundImage:`url(${ingred})`,backgroundRepeat:'no-repeat',backgroundSize:'cover', border:'5px solid #FE555F',padding:'20px',borderRadius:'6px',marginTop:'12px'}}>
-          <h4 style={{marginLeft:'44%',marginTop:'-4%',fontSize:'27px',backgroundColor:'white',width:'18%',border:'5px solid #FE555F'}}>INGREDIENTS</h4>
-           <div style={{color:'white'}}>{ingredients}</div>
-           </div>
-           <br/>
-           <div className="ingredients" style={{backgroundImage:`url(${ingredien})`,backgroundRepeat:'no-repeat',backgroundPosition: 'center',backgroundSize:'cover', border:'5px solid #a5a4a9',padding:'20px',borderRadius:'6px',marginTop:'12px'}}>
+        <h3 style={{fontSize:'29px',fontWeight:'800'}}><u style = {{textDecorationLine:'none'}}><i> RECIPE: {name}</i></u></h3><br/>
+          <div className="ingredients" style={{backgroundImage:`url(${ingredien})`,backgroundRepeat:'no-repeat',backgroundSize:'cover', border:'5px solid #a5a4a9',padding:'20px',borderRadius:'6px',marginTop:'12px'}}>
 
-           <h4 style={{marginLeft:'44%',marginTop:'-4%',fontSize:'27px',backgroundColor:'white',width:'20%',border:'5px solid #FE555F'}}>INSTRUCTIONS</h4>
-           <div style={{color:'white'}}>{recipe}</div>
-           </div>
+            <h4 style={{marginLeft:'0%',marginTop:'-4%',marginBottom: '20px' ,fontSize:'27px',backgroundColor:'white',width:'190px',border:'5px solid #a5a4a9'}}>INGREDIENTS</h4>
+
+           <div style={{color:'white'}}>{ingredients}</div>
+
+           </div>
+           <br/>
+           <div className="ingredients" style={{backgroundImage:`url(${ingredien})`,backgroundRepeat:'no-repeat',backgroundPosition: 'center',backgroundSize:'cover', border:'5px solid #a5a4a9',padding:'20px',borderRadius:'6px',marginTop:'12px'}}>           <h4 style={{marginLeft:'0%',marginTop:'-4%',fontSize:'27px',backgroundColor:'white',width:'210px',marginBottom: '20px',border:'5px solid #a5a4a9'}}>INSTRUCTIONS</h4>           <div style={{color:'white'}}>{recipe}</div>           </div>
            <br/>
 
 

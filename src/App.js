@@ -21,16 +21,16 @@ const oktaAuth = new OktaAuth({
   redirectUri: window.location.origin + "/login/callback", });
 
 function App() {
-  const history = useNavigate();
-  const restoreOriginalUri = async (_oktaAuth, originalUri) => {history(toRelativeUrl(originalUri, window.location.origin));};
-  const onAuthRequired = function () {history("/");};
+  // const history = useNavigate();
+  // const restoreOriginalUri = async (_oktaAuth, originalUri) => {history(toRelativeUrl(originalUri, window.location.origin));};
+  // const onAuthRequired = function () {history("/");};
   return (
     <>
       <div className="App">
 
         <Router>
           <SideBar />
-          <Security
+          {/* <Security
 
           oktaAuth={oktaAuth}
 
@@ -40,7 +40,7 @@ function App() {
 
         <Layout /> 
 
-      </Security>
+      </Security> */}
           
           {/* <Container /> */}
           <Routes>

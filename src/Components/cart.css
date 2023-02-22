@@ -10,7 +10,7 @@
     background: white;
     border-radius: 20px;
     padding: 10px 20px;
-    height: 60%;
+    /* height: 60%; */
   }
   
   .foodcontainer .right-side .payment .name {
@@ -36,8 +36,8 @@
     color: black;
     background: #cdcdd3;
     border-radius: 5px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
-    height: 22vh;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+    
   }
   
   
@@ -132,7 +132,7 @@
     background: #cdcdd3;
     border-radius: 5px;
     min-width: 230px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
   } 
   
   .foodcontainer .right-side .payment .price figure:last-child {

@@ -9,8 +9,8 @@ function PaymentSect(props) {
   const [state, setState] = useState({ count: 1 });
   
   const [cartList, setCart] = useState(props.cartList);
-  const [total, setTotal] = useState(0);
-
+  const [total, setTotal] = useState(1);
+  console.log("ca",cartList)
   function handleDelete(i) {
     console.log("asdsad", i);
     const name = i.title;
@@ -59,7 +59,9 @@ function PaymentSect(props) {
         >
            <button
             onClick={() => {
-              setTotal((state.count - 1) * item.price);
+              let iprice = parseInt(item.price.slice(4))
+              console.log(iprice)
+              setTotal((state.count - 1) * iprice);
               setState({ count: state.count - 1 });
             }}
           >
@@ -70,7 +72,8 @@ function PaymentSect(props) {
          
           <button
             onClick={() => {
-              setTotal((state.count + 1) * item.price);
+              let iprice = parseInt(item.price.slice(4))
+              setTotal((state.count + 1) * iprice);
               setState({ count: state.count + 1 });
             }}
           >
@@ -79,7 +82,7 @@ function PaymentSect(props) {
          
         </div>
         {/* <p className="qty-box">{item.quantity}</p> */}
-        <p style={{ marginLeft: "2%" }}>Rs.{item.price}</p>
+        <p style={{ marginLeft: "2%" }}>{item.price}</p>
         <span
           className="trash-box"
           title="delete"
@@ -103,7 +106,8 @@ function PaymentSect(props) {
       t = t + cartList[i].price;
     }
     // console.log(cartList[0].price, state);
-    // setTotal(state.count * cartList[0].price);
+    let iprice = parseInt(cartList[0].price.slice(3))
+     setTotal(state.count * iprice);
   }, []);
 
   return (
