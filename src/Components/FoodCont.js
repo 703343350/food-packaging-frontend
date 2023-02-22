@@ -104,11 +104,11 @@ function FoodCont() {
 
             <h4 style={{marginLeft:'0%',marginTop:'-4%',marginBottom: '20px' ,fontSize:'27px',backgroundColor:'white',width:'190px',border:'5px solid #a5a4a9'}}>INGREDIENTS</h4>
 
-           <div style={{color:'white'}}>{ingredients}</div>
+           <div style={{color:'white'}}>{ingredients}</div>
 
-           </div>
+           </div>
            <br/>
-           <div className="ingredients" style={{backgroundImage:`url(${ingredien})`,backgroundRepeat:'no-repeat',backgroundPosition: 'center',backgroundSize:'cover', border:'5px solid #a5a4a9',padding:'20px',borderRadius:'6px',marginTop:'12px'}}>           <h4 style={{marginLeft:'0%',marginTop:'-4%',fontSize:'27px',backgroundColor:'white',width:'210px',marginBottom: '20px',border:'5px solid #a5a4a9'}}>INSTRUCTIONS</h4>           <div style={{color:'white'}}>{recipe}</div>           </div>
+           <div className="ingredients" style={{backgroundImage:`url(${ingredien})`,backgroundRepeat:'no-repeat',backgroundPosition: 'center',backgroundSize:'cover', border:'5px solid #a5a4a9',padding:'20px',borderRadius:'6px',marginTop:'12px'}}>           <h4 style={{marginLeft:'0%',marginTop:'-4%',fontSize:'27px',backgroundColor:'white',width:'210px',marginBottom: '20px',border:'5px solid #a5a4a9'}}>INSTRUCTIONS</h4>           <div style={{color:'white'}}>{recipe}</div>           </div>
            <br/>
 
 

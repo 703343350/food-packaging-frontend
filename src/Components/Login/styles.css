@@ -22,6 +22,7 @@
     font-weight: 500;
     text-align: left;
     padding: 10px 0;
+    font-size: 14px !important;
 }
 
 .loginButton {
@@ -34,6 +35,8 @@
     padding: 0.8rem 0;
     font-weight: 500;
     margin: 1rem 0;
+    font-size: 14px !important;
+    cursor: pointer !important;
 }
 
 
@@ -49,6 +52,8 @@
     padding: 0.8rem 0;
     font-weight: 500;
     margin: 1rem 0;
+    cursor: pointer !important;
+    font-size: 14px !important;
 }
 
 
@@ -62,6 +67,7 @@
  color: #6A6A6A;
  text-align: center;
  margin: 0 0 1rem 0;
+ font-size: 14px !important;
 }
 
 .genpactImage {
@@ -98,7 +104,7 @@
     color: #9E9EA5;
     padding-left: 1rem;
     margin: 0;
-    font-size: 1rem;
+    font-size: 1rem !important;
     display: inline-block;
 }
 
@@ -107,5 +113,5 @@
     margin: 0;
     padding: 0.1rem;
     color: red;
-    font-size: 12px;
+    font-size: 12px !important;
 }
