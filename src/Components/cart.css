@@ -10,7 +10,7 @@
     background: white;
     border-radius: 20px;
     padding: 10px 20px;
-    height: 50%;
+    /* height: 60%; */
   }
   
   .foodcontainer .right-side .payment .name {
@@ -33,11 +33,11 @@
     display: flex;
     flex-direction: column;
     font-size: 12px;
-    color: white;
-    background: #7d7d85;
+    color: black;
+    background: #cdcdd3;
     border-radius: 5px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
-    height: 22vh;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+    
   }
   
   
@@ -68,6 +68,18 @@
     color: white;
     border-radius: 7px;
     border: none;
+  }
+
+  .payment .price .last .amount {
+    margin-left: 30%;
+  }
+  .payment .price .last .order-input {
+    padding: 10px 15px;
+    background: #252837;
+    color: white;
+    border-radius: 7px;
+    border: none;
+    margin-top: 10%;
   }
   
   .foodcontainer .right-side .payment .price article .qty-box{
@@ -116,11 +128,11 @@
     justify-content: space-between;
     align-items: center;
     font-size: 12px;
-    color: white;
-    background: #7d7d85;
+    color: black;
+    background: #cdcdd3;
     border-radius: 5px;
     min-width: 230px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
   } 
   
   .foodcontainer .right-side .payment .price figure:last-child {
