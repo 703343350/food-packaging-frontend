@@ -10,9 +10,9 @@ function PaymentSect(props) {
   
   const [cartList, setCart] = useState(props.cartList);
   const [total, setTotal] = useState(1);
-  console.log("ca",cartList)
+ // console.log("ca",cartList)
   function handleDelete(i) {
-    console.log("asdsad", i);
+   // console.log("asdsad", i);
     const name = i.title;
     setCart(cartList.filter(item => item.title !== name));
     // const index = cartList.indexOf(i);

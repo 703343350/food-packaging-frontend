@@ -46,7 +46,7 @@ const Order = () => {
   return (
     <div className="foodcontainer">
     <div className="right-side">
-    <div className="payment">
+    <div className="payment" style={{height:'100%',overflowY:'auto'}}>
         <div className="name">
           <p>Restaurant</p>
           <p style={{marginLeft:'-10%'}}>Items</p>
