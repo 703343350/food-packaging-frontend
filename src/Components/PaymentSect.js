@@ -13,6 +13,9 @@ function PaymentSect(props) {
   function handleDelete(i) {
     
     const index = cartList.indexOf(i);
+    const name = e.target.getAttribute("name")
+    updateList(list.filter(item => item.name !== name));
+
    
     setCart(cartList.splice(index, 1));
   }
@@ -64,6 +67,7 @@ function PaymentSect(props) {
           <div style={{ margin: "0 16px" }}>{state.count}</div>
           <button
             onClick={() => {
+              setTotal(state.count*item.price);
               setState({ count: state.count - 1 });
             }}
           >
@@ -101,15 +105,16 @@ function PaymentSect(props) {
   return (
     <>
       <div className="payment">
-        <div className="name">
+        {cartList.length>0 && <div className="name">
           <h4>Item</h4>
           <p>Qty</p>
           <p>Price</p>
           <p></p>
         </div>
+        }
 
-        <div className="price">
-          {listItems}
+        {cartList.length>0 && <div className="price">
+          { listItems}
           <figure>
             <div className="last">
               {/* <p className="space">Discount</p> */}
@@ -121,6 +126,7 @@ function PaymentSect(props) {
             </div>
           </figure>
         </div>
+        }
       </div>
     </>
   );

@@ -1,13 +1,10 @@
 import "./App.css";
 import SideBar from "./Components/SideBar";
 import Container from "./Components/Container";
-import AfricanFood from "./Components/AfricanFood";
-import ChineseFood from "./Components/ChineseFood";
-import ItalianFood from "./Components/ItalianFood";
-import DesertFood from "./Components/DesertFood";
+
 import Help from "./Components/Help";
 import Profile from "./Components/Profile";
-import ComingSoon from "./Components/ComingSoon";
+
 import Chat from "./Components/Chat";
 import Modal from "./Components/Modal";
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
