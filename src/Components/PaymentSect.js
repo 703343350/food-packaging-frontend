@@ -10,11 +10,14 @@ function PaymentSect(props) {
   console.log("hhhj", props);
   const [cartList, setCart] = useState(props.cartList);
   const [total, setTotal] = useState(0);
+
   function handleDelete(i) {
     console.log("asdsad", i);
-    const index = cartList.indexOf(i);
-    console.log("index", index);
-    setCart(cartList.splice(index, 1));
+    const name = i.title;
+    setCart(cartList.filter(item => item.title !== name));
+    // const index = cartList.indexOf(i);
+    // console.log("index", index);
+    // setCart(cartList.splice(index, 1));
   }
   // const notify = () => {
   //   toast.success("Order has been placed", {
@@ -54,21 +57,26 @@ function PaymentSect(props) {
         <div
           style={{ display: "flex", flexDirection: "row", marginLeft: "-4%" }}
         >
-          <button
+           <button
             onClick={() => {
-              setState({ count: state.count + 1 });
-            }}
-          >
-            <FaPlus />
-          </button>
-          <div style={{ margin: "0 16px" }}>{state.count}</div>
-          <button
-            onClick={() => {
+              setTotal((state.count - 1) * item.price);
               setState({ count: state.count - 1 });
             }}
           >
             <FaMinus></FaMinus>
           </button>
+
+          <div style={{ margin: "0 16px" }}>{state.count}</div>
+         
+          <button
+            onClick={() => {
+              setTotal((state.count + 1) * item.price);
+              setState({ count: state.count + 1 });
+            }}
+          >
+            <FaPlus />
+          </button>
+         
         </div>
         {/* <p className="qty-box">{item.quantity}</p> */}
         <p style={{ marginLeft: "2%" }}>Rs.{item.price}</p>
@@ -83,7 +91,7 @@ function PaymentSect(props) {
 
       <div className="pay">
         <input className="order-input" placeholder="Input Order Note"></input>
-        <button onClick={placeOrder}>Place your order</button>
+        {/* <button onClick={placeOrder}>Place your order</button> */}
       </div>
     </article>
   ));
@@ -94,8 +102,8 @@ function PaymentSect(props) {
     for (let i = 0; i < cartList.length; i++) {
       t = t + cartList[i].price;
     }
-    console.log(cartList[0].price, state);
-    setTotal(state.count * cartList[0].price);
+    // console.log(cartList[0].price, state);
+    // setTotal(state.count * cartList[0].price);
   }, []);
 
   return (
@@ -108,7 +116,7 @@ function PaymentSect(props) {
           <p></p>
         </div>
 
-        <div className="price">
+        {cartList.length>0 && <div className="price">
           {listItems}
           <figure>
             <div className="last">
@@ -117,10 +125,13 @@ function PaymentSect(props) {
             </div>
             <div className="last">
               {/* <p className="space">Rs.0</p> */}
-              <p>Rs.{total}</p>
+              <p className="amount">Rs.{total}</p>
+              <button className="order-input" onClick={placeOrder}>Place your order</button>
             </div>
+
           </figure>
         </div>
+}
       </div>
     </>
   );
