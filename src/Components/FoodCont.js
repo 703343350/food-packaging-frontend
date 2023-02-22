@@ -13,7 +13,8 @@ import ingred from '../img/ingred.jpg';
 import instructions from '../img/instructions.jpeg';
 import ingredien from '../img/ingredien.avif';
 import axios from 'axios'
-import { Oval } from 'react-loader-spinner'
+
+// import { Oval } from 'react-loader-spinner'
 
 
 
@@ -30,10 +31,10 @@ function FoodCont() {
    
    
     function handleSearch(e){
-
+      console.log("input",input)
       axios.get('http://localhost:4000/chatgpt?food='+input)
       .then((res)=>{
-        console.log("dataaaa",data)
+       // console.log("dataaaa",data)
         setData(res.data.data)
         
        
@@ -90,7 +91,7 @@ function FoodCont() {
             <div className="top-section1" >
         <div className="search-box">
         <input type="text" placeholder="Search food..."  value={input} onChange={handleInput}/>
-        <i>   
+        <i onClick={handleSearch}>   
           <FaSearch />
         </i>
         </div>
@@ -120,7 +121,7 @@ function FoodCont() {
             </main>
           </div>
         </div>}
-        {!search && !data && 
+        {/* {!search && !data && 
         <Oval
         height={80}
         width={80}
@@ -134,7 +135,7 @@ function FoodCont() {
         strokeWidthSecondary={2}
       
       />
-        }
+        } */}
        {!search && <div className="left-side">
        
        <div className="cards" style={{backgroundImage:`url(${food})`,  height:'100%',display:'flex',justifyContent:'center',alignItems:'center'}}>
