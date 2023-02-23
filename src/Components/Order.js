@@ -13,7 +13,7 @@ const Order = () => {
         if(window.sessionStorage.getItem('token')){
           let token = window.sessionStorage.getItem('token')
         axios
-        .get("http://localhost:4000/order" , 
+        .get("http://43.204.125.124:3003/order" , 
         {
           headers: {"Authorization": 'Bearer '+token,"Content-Type": 'application/json' }})
         .then((res) => {

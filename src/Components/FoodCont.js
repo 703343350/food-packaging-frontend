@@ -32,7 +32,7 @@ function FoodCont() {
    
     function handleSearch(e){
       console.log("input",input)
-      axios.get('http://localhost:4000/chatgpt?food='+input)
+      axios.get('http://43.204.125.124:3003/chatgpt?food='+input)
       .then((res)=>{
        // console.log("dataaaa",data)
         setData(res.data.data)

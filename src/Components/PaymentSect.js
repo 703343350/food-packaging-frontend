@@ -39,7 +39,7 @@ function PaymentSect(props) {
   function placeOrder() {
     let token = window.sessionStorage.getItem('token')
     axios
-      .post("http://localhost:4000/order", {
+      .post("http://43.204.125.124:3003/order", {
         FoodOrder:[{Name:props.cartList[0].name,Price:total,Quantity:state.count}],
         Restaurant:cartList[0].title,
         TotalPrice:total,
