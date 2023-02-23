@@ -6,6 +6,7 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
 function PaymentSect(props) {
+  console.log(props)
   const [state, setState] = useState({ count: 1 });
   
   const [cartList, setCart] = useState(props.cartList);
@@ -36,9 +37,9 @@ function PaymentSect(props) {
   function placeOrder() {
     axios
       .post("http://localhost:4000/order", {
-        FoodOrder:['tea'],
+        FoodOrder:[{Name:props.cartList[0].name,Price:total,Quantity:state.count}],
         Restaurant:cartList[0].title,
-        Price:total,
+        TotalPrice:total,
       },{
       headers: {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNWJiNzAzOGM5ZDRjZTQ3NTdkNGNjZCIsImVtYWlsIjoiYWJjdGVzdDRAbWFpbC5jb20iLCJ0ZW5hbnRJZCI6IjYyMDc4MTcwZWRlZWM3MWIxZTZjNjk1MCIsInJvbGUiOlsiRVZFTlRfTEVBRCJdLCJpYXQiOjE2NzY5NTgzNTV9.7iXuuBxWv57ykdMMCezPhl2yJH3-C_nJAyvp86SVQdI',"Content-Type": 'application/json' }
       }

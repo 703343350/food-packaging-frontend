@@ -21,6 +21,7 @@ function SideBar() {
     // e.preventDefault();
     // console.log("hey ");
     await oktaAuth.signOut();
+    window.sessionStorage.removeItem('token')
   };
 
   return (
@@ -38,7 +39,7 @@ function SideBar() {
             icon={<IoChatbubbleEllipsesSharp title="Chat with sales rep" />}
           />
         </Link>
-        <Link to="/">
+        <Link to="/orders">
           <Icon icon={<IoRestaurant title="Orders" />} />
         </Link>
         <Link to="/">

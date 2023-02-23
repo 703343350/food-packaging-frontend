@@ -48,7 +48,7 @@ function FoodCont() {
         
         setIngred(data.ingredients.map((item) => <li>{item}</li>));
         setRecipe(data.recipe.map((item) => <li>{item}</li>));
-        setRes(data.restaurants.map((item) => <Link to="/foodDetail" state={{img:data.image ,name: item.name, price: item.price }}><FoodBox imgSrc={data.image} title={item.name} price={item.price} /></Link>));
+        setRes(data.restaurants.map((item) => <Link to="/foodDetail" state={{img:data.image ,name: item.name, price: item.price }}><FoodBox imgSrc={data.image} title={item.name} price={item.price} name={input.toUpperCase()} /></Link>));
         
         setName(input.toUpperCase());
         setInput('')

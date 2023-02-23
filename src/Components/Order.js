@@ -1,24 +1,31 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios';
 import './cart.css'
+import { useNavigate } from 'react-router';
 
 const Order = () => {
     const [orders, setOrders]=useState([]);
     const [state, setState] = useState({ count: 1 });
-    
+    const navigate = useNavigate();
     
     const [total, setTotal] = useState(0);
     useEffect(() => {
+        if(window.sessionStorage.getItem('token')){
+          let token = window.sessionStorage.getItem('token')
         axios
         .get("http://localhost:4000/order" , 
         {
-          headers: {"Authorization": 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNWJiNzAzOGM5ZDRjZTQ3NTdkNGNjZCIsImVtYWlsIjoiYWJjdGVzdDRAbWFpbC5jb20iLCJ0ZW5hbnRJZCI6IjYyMDc4MTcwZWRlZWM3MWIxZTZjNjk1MCIsInJvbGUiOlsiRVZFTlRfTEVBRCJdLCJpYXQiOjE2NzY5NTgzNTV9.7iXuuBxWv57ykdMMCezPhl2yJH3-C_nJAyvp86SVQdI',"Content-Type": 'application/json' }})
+          headers: {"Authorization": 'Bearer '+token,"Content-Type": 'application/json' }})
         .then((res) => {
           console.log("data",res,res.data)
             setOrders(res.data)
             
         }
         );
+      }
+      else{
+        navigate('/')
+      }
     }, [])
     const listItems = orders.map((item) => (
       <article>
@@ -31,11 +38,13 @@ const Order = () => {
             style={{ display: "flex", flexDirection: "row", marginLeft: "-4%" }}
           >
             {
-              item.FoodOrder.join(', ')
+              item.FoodOrder.map((res) =>(
+                res.Name
+              ))
             }
           </div>
           {/* <p className="qty-box">{item.quantity}</p> */}
-          <p style={{ marginLeft: "2%" }}>Rs.{item.Price}</p>
+          <p style={{ marginLeft: "2%" }}>Rs.{item.TotalPrice}</p>
           
         </div>
         </div>
@@ -56,16 +65,7 @@ const Order = () => {
 
         <div className="price">
           {listItems}
-          <figure>
-            <div className="last">
-              {/* <p className="space">Discount</p> */}
-              <p>Total</p>
-            </div>
-            <div className="last">
-              {/* <p className="space">Rs.0</p> */}
-              <p>Rs.100</p>
-            </div>
-          </figure>
+          
         </div>
       </div>
       </div>
