@@ -12,7 +12,7 @@ import Container from "../Container";
 import Help from "../Help";
 import Profile from "../Profile";
 // import ComingSoon from "../ComingSoon";
-// import Chat from "../Chat";
+import Chat from "../Chat";
 // import Modal from "../Modal";
 import Login from ".";
 import SideBar from "../SideBar";
@@ -49,7 +49,7 @@ const Layout = (props) => {
             <Route path="/help" element={<Help />} />
             <Route path="/profile" element={<Profile />} />
             {/* <Route path="/comingsoon" element={<ComingSoon />} /> */}
-            {/* <Route path="/chat" element={<Chat />} /> */}
+            <Route path="/chat" element={<Chat />} />
             {/* <Route path="/modal" element={<Modal />} /> */}
             {/* <Route path="/update/:id" element={<Modal />} /> */}
             <Route path="/foodDetail" element={<FoodDetails />} />

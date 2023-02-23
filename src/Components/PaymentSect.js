@@ -4,6 +4,8 @@ import { FaPlus } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+
 
 function PaymentSect(props) {
   console.log(props)
@@ -20,32 +22,33 @@ function PaymentSect(props) {
     // console.log("index", index);
     // setCart(cartList.splice(index, 1));
   }
-  // const notify = () => {
-  //   toast.success("Order has been placed", {
-  //     position: "top-center",
-  //     autoClose: 3000,
-  //     hideProgressBar: false,
-  //     closeOnClick: true,
-  //     pauseOnHover: true,
-  //     draggable: true,
-  //     progress: undefined,
-  //     theme: "light",
-  //   });
-  // };
+  const notify = () => {
+    toast.success("Order has been placed", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  };
 
   const navigate = useNavigate();
   function placeOrder() {
+    let token = window.sessionStorage.getItem('token')
     axios
       .post("http://localhost:4000/order", {
         FoodOrder:[{Name:props.cartList[0].name,Price:total,Quantity:state.count}],
         Restaurant:cartList[0].title,
         TotalPrice:total,
       },{
-      headers: {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNWJiNzAzOGM5ZDRjZTQ3NTdkNGNjZCIsImVtYWlsIjoiYWJjdGVzdDRAbWFpbC5jb20iLCJ0ZW5hbnRJZCI6IjYyMDc4MTcwZWRlZWM3MWIxZTZjNjk1MCIsInJvbGUiOlsiRVZFTlRfTEVBRCJdLCJpYXQiOjE2NzY5NTgzNTV9.7iXuuBxWv57ykdMMCezPhl2yJH3-C_nJAyvp86SVQdI',"Content-Type": 'application/json' }
+      headers: {'Authorization': 'Bearer '+token,"Content-Type": 'application/json' }
       }
       )
       .then((res) => {
-        // notify();
+         notify();
         navigate("/orders");
       });
   }
@@ -142,6 +145,7 @@ function PaymentSect(props) {
             <h3>No Items Added Into The Cart</h3>
           </div>}
       </div>
+      <ToastContainer />
     </>
   );
 }

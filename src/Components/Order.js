@@ -23,9 +23,7 @@ const Order = () => {
         }
         );
       }
-      else{
-        navigate('/')
-      }
+    
     }, [])
     const listItems = orders.map((item) => (
       <article>
