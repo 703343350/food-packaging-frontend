@@ -8,7 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 
 function PaymentSect(props) {
-  console.log(props)
+ // console.log(props)
   const [state, setState] = useState({ count: 1 });
   
   const [cartList, setCart] = useState(props.cartList);
@@ -64,7 +64,7 @@ function PaymentSect(props) {
            <button
             onClick={() => {
               let iprice = parseInt(item.price.slice(4))
-              console.log(iprice)
+             // console.log(iprice)
               setTotal((state.count - 1) * iprice);
               setState({ count: state.count - 1 });
             }}

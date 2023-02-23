@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 
 const Cart = (props) => {
     const { state } = useLocation();
-    console.log("c data",state)
+   // console.log("c data",state)
     const [cartList, setCart] = useState(state)
     // useEffect(() => {
       

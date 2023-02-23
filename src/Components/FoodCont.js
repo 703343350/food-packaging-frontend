@@ -14,7 +14,7 @@ import instructions from '../img/instructions.jpeg';
 import ingredien from '../img/ingredien.avif';
 import axios from 'axios'
 
-// import { Oval } from 'react-loader-spinner'
+ import { Oval } from 'react-loader-spinner'
 
 
 
@@ -27,17 +27,32 @@ function FoodCont() {
   const [ingredients,setIngred] = useState([])
   const [recipe,setRecipe] = useState([])
   const [res,setRes] = useState([])
+  const [loader,setLoader] = useState(false)
     //console.log("data",data.recipe.ingredients)
    
    
     function handleSearch(e){
-      console.log("input",input)
-      axios.get('http://43.204.125.124:3003/chatgpt?food='+input)
+     // console.log("dataa",document.getElementsByClassName('container'))
+      document.getElementsByClassName('top-section')[0].style.filter = 'blur(1px)';
+      document.getElementsByTagName("header")[0].style.filter='blur(1px)'
+      document.getElementsByTagName("header")[0].style.pointerEvents='none'
+      setLoader(true)
+      axios.get('http://localhost:4000/chatgpt?food='+input)
       .then((res)=>{
        // console.log("dataaaa",data)
         setData(res.data.data)
-        
+        setLoader(false)
+        document.getElementsByClassName('top-section')[0].style.filter = 'blur(0)';
+      document.getElementsByTagName("header")[0].style.filter='blur(0px)'
+      document.getElementsByTagName("header")[0].style.pointerEvents='none'
        
+      })
+      .catch((err)=>{
+        setLoader(false)
+        setSearch(false);
+       document.getElementsByClassName('top-section')[0].style.filter = 'blur(0)';
+      document.getElementsByTagName("header")[0].style.filter='blur(0px)';
+      document.getElementsByTagName("header")[0].style.pointerEvents='none';
       })
       
       
@@ -53,7 +68,7 @@ function FoodCont() {
         setName(input.toUpperCase());
         setInput('')
         setSearch(true)
-        console.log("data", data)
+       // console.log("data", data)
       }
     }, [data])
     
@@ -64,29 +79,28 @@ function FoodCont() {
     
     return (
     <>
-      <div className="foodcontainer">
-        {search && <div className="left-side">
+    {loader && 
+    <div className="foodcontainer" style={{marginLeft:'45%', marginRight:'18%',filter:'blur(0px)'}}>
+    <Oval
+    height={80}
+    width={80}
+    color="#4fa94d"
+    wrapperStyle={{}}
+    wrapperClass=""
+    visible={true}
+    ariaLabel='oval-loading'
+    secondaryColor="#4fa94d"
+    strokeWidth={2}
+    strokeWidthSecondary={2}
+  
+  />
+  </div>
+    }
+     {!loader && <div className="foodcontainer">
+        
+         {search && data!={} && <div className="left-side">
         
           <div className="cards">
-            {/* <div className="all">
-              <div className="varieties">
-                <Link to="/" className="var-btn">
-                  All
-                </Link>
-                <Link to="/african" className="var-btn">
-                  African
-                </Link>
-                <Link to="/chinese" className="var-btn">
-                  Chinese
-                </Link>
-                <Link to="/italian" className="var-btn">
-                  Italian
-                </Link>
-                <Link to="/desert" className="var-btn">
-                  Desert
-                </Link>
-              </div>
-            </div> */}
            
             <div className="top-section1" >
         <div className="search-box">
@@ -120,23 +134,9 @@ function FoodCont() {
               {res}
             </main>
           </div>
-        </div>}
-        {/* {!search && !data && 
-        <Oval
-        height={80}
-        width={80}
-        color="#4fa94d"
-        wrapperStyle={{}}
-        wrapperClass=""
-        visible={true}
-        ariaLabel='oval-loading'
-        secondaryColor="#4fa94d"
-        strokeWidth={2}
-        strokeWidthSecondary={2}
-      
-      />
-        } */}
-       {!search && <div className="left-side">
+        </div>} 
+        
+       {!loader && !search && <div className="left-side">
        
        <div className="cards" style={{backgroundImage:`url(${food})`,  height:'100%',display:'flex',justifyContent:'center',alignItems:'center'}}>
        <div className="title">
@@ -153,7 +153,7 @@ function FoodCont() {
         </div>
        </div>
        </div>}
-      </div>
+      </div> } 
     </>
   );
 }

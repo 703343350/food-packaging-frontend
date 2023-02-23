@@ -20,7 +20,7 @@ const notify = () => {
 
 
 function FoodBox({ imgSrc, title, price,name }) {
-  console.log("abcd",name)
+ // console.log("abcd",name)
   const navigate = useNavigate();
   function handleClick(e,item) {
     e.preventDefault();
