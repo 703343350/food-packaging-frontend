@@ -3,10 +3,10 @@ import SideBar from "./Components/SideBar";
 import Container from "./Components/Container";
 
 import Help from "./Components/Help";
-import Profile from "./Components/Profile";
+
 
 import Chat from "./Components/Chat";
-import Modal from "./Components/Modal";
+
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import FoodDetails from "./Components/FoodDetails";
 import Cart from "./Components/Cart";
@@ -47,7 +47,7 @@ function App() {
             <Route path="/" element={<Container />} />
             
             <Route path="/help" element={<Help />} />
-            <Route path="/profile" element={<Profile />} />
+         
             {/* <Route path="/comingsoon" element={<ComingSoon />} />
             <Route path="/chat" element={<Chat />} />
             <Route path="/modal" element={<Modal />} />
