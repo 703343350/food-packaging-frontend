@@ -5,6 +5,7 @@ import './cart.css'
 const Order = () => {
     const [orders, setOrders]=useState([]);
     const [state, setState] = useState({ count: 1 });
+
     
     
     const [total, setTotal] = useState(0);
@@ -16,7 +17,8 @@ const Order = () => {
         .then((res) => {
           console.log("data",res,res.data)
             setOrders(res.data)
-            
+
+            setTotal(res.data.map(item => item.TotalPrice).reduce((prev, next) => prev + next))
         }
         );
     }, [])
@@ -35,7 +37,7 @@ const Order = () => {
             }
           </div>
           {/* <p className="qty-box">{item.quantity}</p> */}
-          <p style={{ marginLeft: "2%" }}>Rs.{item.Price}</p>
+          <p style={{ marginLeft: "2%" }}>Rs.{item.TotalPrice}</p>
           
         </div>
         </div>
@@ -63,7 +65,7 @@ const Order = () => {
             </div>
             <div className="last">
               {/* <p className="space">Rs.0</p> */}
-              <p>Rs.100</p>
+              <p>{total}</p>
             </div>
           </figure>
         </div>
