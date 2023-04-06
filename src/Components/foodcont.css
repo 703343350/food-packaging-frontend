@@ -129,7 +129,7 @@
   font-weight: 600;
   cursor: pointer;
   border: none;
-  width: 50%;
+  width: 100%;
 }
 
 .foodcontainer .left-side .cards main .details .cart-btn .btn:hover {

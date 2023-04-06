@@ -65,7 +65,7 @@ const Order = () => {
             </div>
             <div className="last">
               {/* <p className="space">Rs.0</p> */}
-              <p>{total}</p>
+              <p>Rs. {total}</p>
             </div>
           </figure>
         </div>

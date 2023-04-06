@@ -23,7 +23,7 @@ function SideBar() {
       
       <ul className="top-menu">
          <Link to="/"><Icon icon={<MdDashboard title="Order"/>} /></Link> 
-        <Link to="/profile"><Icon icon={<FaUser title="Your Profile"/>} /></Link>
+        <Link to="/"><Icon icon={<FaUser title="Your Profile"/>} /></Link>
         <Link to="/chat"><Icon icon={<IoChatbubbleEllipsesSharp title="Chat with sales rep"/>} /></Link>
         <Link to="/orders"><Icon icon={<IoRestaurant title="Orders"/>} /></Link>
         <Link to="/"><Icon icon={<IoIosHelpCircle title="FAQs"/>} /></Link>
