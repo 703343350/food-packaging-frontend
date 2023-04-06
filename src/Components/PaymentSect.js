@@ -35,7 +35,7 @@ function PaymentSect(props) {
   const navigate = useNavigate();
   function placeOrder() {
     axios
-      .post("http://localhost:4000/order", {
+      .post("http://43.204.125.124:8081/order", {
         FoodOrder:['tea'],
         Restaurant:cartList[0].title,
         TotalPrice:total,
