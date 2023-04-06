@@ -10,7 +10,12 @@ function PaymentSect(props) {
   
   const [cartList, setCart] = useState(props.cartList);
   const [total, setTotal] = useState(1);
- // console.log("ca",cartList)
+  //console.log("ca",props)
+  var foodItems=[];
+  for(let i=0;i<cartList.length;i++){
+    foodItems.push(cartList[i].itemName)
+  }
+ 
   function handleDelete(i) {
    // console.log("asdsad", i);
     const name = i.title;
@@ -36,7 +41,7 @@ function PaymentSect(props) {
   function placeOrder() {
     axios
       .post("http://43.204.125.124:8081/order", {
-        FoodOrder:['tea'],
+        FoodOrder:foodItems,
         Restaurant:cartList[0].title,
         TotalPrice:total,
       },{
@@ -51,16 +56,19 @@ function PaymentSect(props) {
   const listItems = cartList.map((item) => (
     <article>
       <div className="pay-top">
-        <div>
+        <div style={{marginLeft:'3%'}}>
+          <b>{item.itemName}</b>
+        </div>
+        <div style={{marginLeft:'4%'}}>
           <b>{item.title}</b>
         </div>
         <div
-          style={{ display: "flex", flexDirection: "row", marginLeft: "-4%" }}
+          style={{ display: "flex", flexDirection: "row", marginLeft: "4%" }}
         >
            <button
             onClick={() => {
               let iprice = parseInt(item.price.slice(4))
-              console.log(iprice)
+             // console.log(iprice)
               setTotal((state.count - 1) * iprice);
               setState({ count: state.count - 1 });
             }}
@@ -115,6 +123,7 @@ function PaymentSect(props) {
       <div className="payment">
         {cartList.length>0 && <div className="name">
           <h4>Item</h4>
+          <h4>Restaurant</h4>
           <p>Qty</p>
           <p>Price</p>
           <p></p>

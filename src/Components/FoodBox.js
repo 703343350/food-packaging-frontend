@@ -19,8 +19,8 @@ const notify = () => {
 }
 
 
-function FoodBox({ imgSrc, title, price }) {
-
+function FoodBox({ imgSrc, title, price,itemName }) {
+ // console.log("item",itemName);
   const navigate = useNavigate();
   function handleClick(e,item) {
     e.preventDefault();
@@ -36,6 +36,9 @@ function FoodBox({ imgSrc, title, price }) {
       <div className="food-name">
         <h2>{title}</h2>
       </div>
+      <div className="food-name">
+        <h2>{itemName}</h2>
+      </div>
 
       <div className="food-details">
         <div>
@@ -47,7 +50,7 @@ function FoodBox({ imgSrc, title, price }) {
       </div>
 
       <div className="cart-btn">
-        <button onClick={(e) => handleClick(e,{ imgSrc, title, price })} className="btn">
+        <button onClick={(e) => handleClick(e,{ imgSrc, title, price,itemName })} className="btn">
           Add to cart
         </button>
         {/* <button onClick={notify} className="btn">Add to cart</button> */}

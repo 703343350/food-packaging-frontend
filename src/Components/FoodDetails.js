@@ -7,7 +7,7 @@ import "./fooddetails.css";
 const FoodDetails = () => {
   const location = useLocation();
   const data = location.state;
-  console.log("daaya", data);
+ // console.log("daaya", data);
   return (
 <div className="container">
 <TopSect />

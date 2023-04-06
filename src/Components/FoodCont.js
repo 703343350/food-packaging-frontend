@@ -31,7 +31,7 @@ function FoodCont() {
    
    
     function handleSearch(e){
-      console.log("input",input)
+      //console.log("input",input)
       axios.get('http://43.204.125.124:8081/chatgpt?food='+input)
       .then((res)=>{
        // console.log("dataaaa",data)
@@ -48,12 +48,12 @@ function FoodCont() {
         
         setIngred(data.ingredients.map((item) => <li>{item}</li>));
         setRecipe(data.recipe.map((item) => <li>{item}</li>));
-        setRes(data.restaurants.map((item) => <Link to="/foodDetail" state={{img:data.image ,name: item.name, price: item.price }}><FoodBox imgSrc={data.image} title={item.name} price={item.price} /></Link>));
+        setRes(data.restaurants.map((item) => <Link to="/foodDetail" state={{img:data.image ,name: item.name, price: item.price }}><FoodBox imgSrc={data.image} title={item.name} price={item.price} itemName={input} /></Link>));
         
         setName(input.toUpperCase());
         setInput('')
         setSearch(true)
-        console.log("data", data)
+       // console.log("data", data)
       }
     }, [data])
     

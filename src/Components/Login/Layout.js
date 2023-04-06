@@ -9,9 +9,9 @@ const Layout = (props) => {
     if (authState && authState.isAuthenticated) {
       let accessToken = authState.idToken.idToken;
       oktaAuth.token.getUserInfo().then(async (info) => {
-        console.log(info);
+      //  console.log(info);
       });
-      console.log(accessToken, "dddd");
+      //console.log(accessToken, "dddd");
     }
   }, [authState, oktaAuth]);
 
