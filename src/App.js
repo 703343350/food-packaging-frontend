@@ -1,10 +1,7 @@
-import "./App.css";
-import SideBar from "./Components/SideBar";
 import { useNavigate } from "react-router-dom";
 import { OktaAuth, toRelativeUrl } from "@okta/okta-auth-js";
 import { Security } from "@okta/okta-react";
-import Layout from "./Components/Login/Layout";
-
+import Layout from "./Navigation/Layout"
 const oktaAuth = new OktaAuth({
   issuer: process.env.REACT_APP_OKTA_ISSUER,
   clientId: process.env.REACT_APP_OKTA_CLIENT_ID,

@@ -1,0 +1,117 @@
+.LoginPageCard {
+    width: 25rem;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 1rem 2rem;
+    border: 1px solid #DDDDDD;
+}
+
+.inputBox {
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid lightgray;
+    border-color: lightgray;
+    padding: 0.5rem 1rem;
+    width: 100%;
+}
+
+.inputLabel {
+    color: #6A6A6A;
+    font-weight: 500;
+    text-align: left;
+    padding: 10px 0;
+    font-size: 14px !important;
+}
+
+.loginButton {
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: #1662DD;
+    border-radius: 4px;
+    color: #fff;
+    padding: 0.8rem 0;
+    font-weight: 500;
+    margin: 1rem 0;
+    font-size: 14px !important;
+    cursor: pointer !important;
+}
+
+
+.loginSSOButton {
+    width: 100%;
+    outline: none;
+    border-color: #1662DD;
+    border: 1px solid #1662DD;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #2683FF;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 0.8rem 0;
+    font-weight: 500;
+    margin: 1rem 0;
+    cursor: pointer !important;
+    font-size: 14px !important;
+}
+
+
+.userIcon {
+    background-color: #FCFCFD;
+    border-radius: 50%;
+    padding: 0;
+}
+
+.signInText {
+ color: #6A6A6A;
+ text-align: center;
+ margin: 0 0 1rem 0;
+ font-size: 14px !important;
+}
+
+.genpactImage {
+    text-align: center;
+    align-items: center;
+    max-width: 200px;
+    max-height: 40px;
+}
+
+.userIconDiv {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    padding: 1rem 0 1.5rem 0;
+}
+
+.underLine {
+    float: left;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    margin: -2rem;
+    background-color: lightgray;
+}
+
+.checkBox {
+    width: 1rem;
+    height: 1rem;
+}
+
+.rememberText {
+    color: #9E9EA5;
+    padding-left: 1rem;
+    margin: 0;
+    font-size: 1rem !important;
+    display: inline-block;
+}
+
+.helperText {
+    text-align: left;
+    margin: 0;
+    padding: 0.1rem;
+    color: red;
+    font-size: 12px !important;
+}

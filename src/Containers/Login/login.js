@@ -8,6 +8,9 @@ const Login = () => {
  
   return <div>
     <div className='absolute'>
+        <div className="w-full">
+            <div className=""></div>
+        </div>
       <h1>Hi there</h1>
     </div>
     <div>
