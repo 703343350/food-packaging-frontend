@@ -8,10 +8,10 @@ import ital from "../img/ital.jpg";
 import PaymentSect from "./PaymentSect";
 import { Link } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
-import food from '../img/bckgrnd.avif';
+import food from '../img/bckgrnd.png';
 import ingred from '../img/ingred.jpg';
 import instructions from '../img/instructions.jpeg';
-import ingredien from '../img/ingredien.avif';
+import ingredien from '../img/bckingredient.png';
 import axios from 'axios'
 
 // import { Oval } from 'react-loader-spinner'
