@@ -6,6 +6,7 @@ import { useOktaAuth, LoginCallback } from "@okta/okta-react";
 import SideBar from "../Components/SideBar";
 import LoginPage from "../Pages/LoginPage";
 import HomePage from "../Pages/HomePage";
+import SignUpPage from "../Pages/SignUpPage";
 const Layout = (props) => {
   // const history = useNavigate();
   const { authState, oktaAuth } = useOktaAuth();
@@ -26,6 +27,7 @@ const Layout = (props) => {
         <Routes>
           <Route exact path="/login/callback" element={<LoginCallback />} />
           <Route exact path="/" element={<LoginPage />} />
+          <Route exact path="/signUp" element={<SignUpPage />} />
         </Routes>
       ) : (
         <div className="App">
