@@ -32,13 +32,6 @@ const SignUp = () => {
       createAccount(values, address)
   }
 
-  console.log(values);
-  console.log(address);
-
-  function handleClear(){
-    setValues(initialValue)
-    setAddress(initialAddress)
-  }
   return (
     <div>
       <div className="absolute -z-20 w-full h-screen">
@@ -52,10 +45,9 @@ const SignUp = () => {
         </div>
       </div>
       <div className="w-full flex justify-center items-center">
-        <div className="w-3/6 rounded border-zinc-500 border-2 m-44 mt-14 p-16">
+        <div className="w-5/6 rounded border-zinc-500 border-2 m-44 mt-14 p-16 bg-white">
           <h1 className="text-xl">Create Account</h1>
           <div>
-            {currentPage === 1 && (
               <Page1
                 errors={errors}
                 setErrors={setErrors}
@@ -63,8 +55,6 @@ const SignUp = () => {
                 values={values}
                 setCurrentPage={setCurrentPage}
               />
-            )}
-            {currentPage === 2 && (
               <Page2
                 errors={errors}
                 setErrors={setErrors}
@@ -72,9 +62,7 @@ const SignUp = () => {
                 address={address}
                 setCurrentPage={setCurrentPage}
                 handleCreateAccount={handleCreateAccount}
-                handleClear={handleClear}
               />
-            )}
           </div>
         </div>
       </div>

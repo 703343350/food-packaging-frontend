@@ -1,0 +1,44 @@
+.okta-form-title{
+
+    font-size: xx-large;
+    color: #eaa44d;
+}
+
+.o-form-input input{
+    font-size: medium;
+    border: #eaa44d solid 1px;
+    border-radius: 2px;
+    width: 100%;
+
+}
+.okta-form-label{
+    font-size: medium;
+    color: #363331;
+}
+.okta-form-input-error{
+    font-size: small;
+    color:red
+}
+
+.o-form-input-name-remember{
+    margin: 10px;
+    display:flex;
+    display: none;
+    
+}
+.o-form-button-bar {
+    display: flex;
+    border: #363331 2px solid;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #eaa44d;
+    padding: 2px;
+    margin-top: 10px;
+    color: white;
+}
+.o-form-button-bar:hover{
+    background-color: white;
+    color: #eaa44d;
+    border: #eaa44d 2px solid;
+
+}

@@ -1,4 +1,4 @@
-import SignUp from "../Containers/SignUp"
+import SignUp from "../Containers/SignUp/SignUp"
 
 const SignUpPage = () => {
 
