@@ -1,32 +1,53 @@
-import { useState } from "react"
-import useFoodSearch from "../../hooks/useFoodSearch"
-import usePasswordLogin from "../../hooks/usePasswordLogin"
+import { useState } from "react";
+import useFoodSearch from "../../hooks/useFoodSearch";
+import usePasswordLogin from "../../hooks/usePasswordLogin";
 
-const SearchBox = () => {
+const SearchBox = ({searchFood}) => {
+  const [searchText, setSearchText] = useState("");
 
-
-    const [searchText, setSearchText] = useState("")
-    const {searchFood} = useFoodSearch()
+  function handleSubmit(e) {
+    e.preventDefault();
     console.log(searchText)
+    searchFood(searchText);
+  }
 
-    function handleSubmit(e){
-        e.preventDefault()
-        searchFood(searchText)
-    }
-
-    return 	<form class="flex items-center  w-10/12 m-2" onSubmit={handleSubmit}>   
-    <label for="simple-search" class="sr-only">Search</label>
-    <div class="relative w-10/12">
-        <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+  return (
+    <form class="relative bg-white m-4 flex flex-wrap justify-center" onSubmit={handleSubmit}>
+      
+        <div className="flex w-2/6">
+          <input
+            type="search"
+            className="relative m-0 -mr-0.5 block flex-auto rounded-l border border-solid border-[#707070] bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary"
+            placeholder="Search for your food"
+            aria-label="Search"
+            value={searchText}
+            onChange={(e)=> setSearchText(e.target.value)}
+            aria-describedby="button-addon1"
+          />
+          {/* <!--Search button--> */}
+          <button
+            className=" bg-[#223e6e] border-r-2 relative z-[2] flex items-center rounded-r bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg"
+            type="submit"
+            id="button-addon1"
+            data-te-ripple-init
+            data-te-ripple-color="light"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              className="h-5 w-5"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
         </div>
-        <input value={searchText} onChange={e=> setSearchText(e.target.value)} type="text" id="simple-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search" required />
-    </div>
-    <button type="submit" class="p-2.5 ml-2 text-sm font-medium text-white  rounded-lg border  focus:ring-4 focus:outline-none focus:ring-blue-300" ><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
-</form>
-}
+    </form>
+  );
+};
 
-
-
-
-export default SearchBox
+export default SearchBox;

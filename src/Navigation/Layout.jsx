@@ -20,6 +20,7 @@ const Layout = (props) => {
         console.log(info);
       });
       console.log(accessToken, "dddd");
+      localStorage.setItem('authToken', accessToken);
     }
   }, [authState, oktaAuth]);
 
