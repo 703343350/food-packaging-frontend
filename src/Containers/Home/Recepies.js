@@ -2,11 +2,11 @@ import React from 'react'
 let colors = ["#df966b", "#5c7734", "#9caeb0", "#826d63", "#eda661", "#55707c"]
 
 
-const Recepies = (props) =>{
+const Recepies = (props) => {
 
-    const {handleRecepieSelect, recepies, toggleState} = props;
+  const { handleRecepieSelect, recepies, toggleState } = props;
 
-    return  <div className=" bg-slate-50">
+  return <div className=" bg-slate-50">
 
     <div className="border border-slate-400 relative w-full shadow-md">
       <div className=" bg-[#30649b] p-4">
@@ -16,11 +16,11 @@ const Recepies = (props) =>{
         {recepies.map((recepie, index) => {
           return <div
             className={toggleState === index ? "block text-center bg-indigo-500" : "block text-center bg-indigo-500 opacity-75"}
-            onClick={() => handleRecepieSelect(index,recepie.name )}
+            onClick={() => handleRecepieSelect(index, recepie.name)}
           >
             <div className={toggleState === index ? "h-2 rounded-full bg-white" : "h-2 rounded-full bg-slate-500"}></div>
             <div
-              className={toggleState === index ? "border-b-2 border-neutral-100  px-7 py-5 dark:border-neutral-600 dark:text-neutral-50 text-white" : "border-b-2 border-neutral-100  px-7 py-5 dark:border-neutral-600 dark:text-neutral-50"} style={{ background: colors[index] }}>
+              className={toggleState === index ? "border-b-2 border-neutral-100 h-16 pt-5 py-3 dark:border-neutral-600 dark:text-neutral-50 text-white" : "border-b-2 border-neutral-100 h-16 pt-5 py-3 dark:border-neutral-600 dark:text-neutral-50"} style={{ background: colors[index] }}>
               {recepie.name}
             </div>
             <div

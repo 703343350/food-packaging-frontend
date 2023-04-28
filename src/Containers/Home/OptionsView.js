@@ -82,7 +82,7 @@ const Restaurant = [
     },
 ]
 function OptionsView(props) {
-    const {type, currentType, setCurrentType, cafeData} = props;
+    const { type, currentType, setCurrentType, cafeData } = props;
     const [toggleButton, setToggleButton] = useState(1)
 
     const toggleCooks = (value) => {
@@ -90,7 +90,7 @@ function OptionsView(props) {
         setCurrentType(value)
     }
 
-    if(currentType === ""){
+    if (currentType === "") {
         return null
     }
     return (
@@ -102,16 +102,16 @@ function OptionsView(props) {
                 </div>
                 <div className=''>
                     <div className='mx-10' onClick={() => toggleCooks("Cafeteria")}>CAFETERIA</div>
-                    <div className={currentType === "Cafeteria"  ? "h-2 w-40 rounded-full bg-slate-600" : "h-2 w-40 rounded-full bg-slate-400"}></div>
+                    <div className={currentType === "Cafeteria" ? "h-2 w-40 rounded-full bg-slate-600" : "h-2 w-40 rounded-full bg-slate-400"}></div>
 
                 </div>
                 <div className=''>
                     <div className='mx-8' onClick={() => toggleCooks("restaurant")}>RESTAURANT</div>
-                    <div className={currentType === "restaurant"  ? "h-2 w-40 rounded-full bg-slate-600" : "h-2 w-40 rounded-full bg-slate-400"}></div>
+                    <div className={currentType === "restaurant" ? "h-2 w-40 rounded-full bg-slate-600" : "h-2 w-40 rounded-full bg-slate-400"}></div>
                 </div>
             </div>
             <div className={currentType === "homecook" ? "block border -mt-1 border-slate-400  relative my-4 w-full p-2 pt-4 shadow-md" : "hidden"}>
-                <div className='grid grid-cols-5 gap-3 mx-6'>
+                <div className='grid grid-cols-5 gap-10 mx-6'>
                     {
                         homeCook.map((items) => {
                             return (
