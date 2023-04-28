@@ -42,7 +42,7 @@ const Header = () => {
             />
             {showProfileDropdown && (
               <div
-                className="absolute end-0 bg-blue-950 rounded-b-2xl text-white p-2 text-xs"
+                className="absolute end-0 bg-blue-950 rounded-b-2xl text-white p-2 text-xs z-50"
                 style={{ width: 150 }}
                 onClick={() => setShowProfileDropDown(false)}
               >
@@ -74,9 +74,9 @@ const Header = () => {
           </div>
         </div>
       ) :
-      <div className="flex justify-end bg-blue-950 space-x-2 p-2">
-        .
-</div>
+        <div className="flex justify-end bg-blue-950 space-x-2 p-2">
+          .
+        </div>
       }
     </div>
   );
