@@ -26,15 +26,16 @@ const Order = () => {
       <article>
         <div className="payment">
         <div className="pay-top" style={{paddingTop:'5px'}}>
-          <div>
+          <div style={{width:'10%'}}>
             <b>{item.Restaurant}</b>
           </div>
           <div
             style={{ display: "flex", flexDirection: "row", marginLeft: "-4%" }}
           >
-            {
+            <strong>{
               item.FoodOrder.join(', ')
             }
+            </strong>
           </div>
           {/* <p className="qty-box">{item.quantity}</p> */}
           <p style={{ marginLeft: "2%" }}>Rs.{item.TotalPrice}</p>
@@ -51,8 +52,8 @@ const Order = () => {
     <div className="payment" style={{height:'100%',overflowY:'auto'}}>
         <div className="name">
           <p>Restaurant</p>
-          <p style={{marginLeft:'-10%'}}>Items</p>
-          <p style={{marginRight:'4%'}}>Price</p>
+          <p style={{marginLeft:'-1%'}}>Items</p>
+          <p style={{marginRight:'2%'}}>Price</p>
           
         </div>
 

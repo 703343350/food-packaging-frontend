@@ -102,7 +102,7 @@ function FoodCont() {
         <h3 style={{fontSize:'29px',fontWeight:'800'}}><u style = {{textDecorationLine:'none'}}><i> RECIPE: {name}</i></u></h3><br/>
           <div className="ingredients" style={{backgroundImage:`url(${ingredien})`,backgroundRepeat:'no-repeat',backgroundSize:'cover', border:'5px solid #a5a4a9',padding:'20px',borderRadius:'6px',marginTop:'12px'}}>
 
-            <h4 style={{marginLeft:'0%',marginTop:'-4%',marginBottom: '20px' ,fontSize:'27px',backgroundColor:'white',width:'190px',border:'5px solid #a5a4a9'}}>INGREDIENTS</h4>
+            <h4 style={{marginLeft:'0%',marginTop:'-3%',marginBottom: '20px' ,fontSize:'27px',backgroundColor:'white',width:'190px',border:'5px solid #a5a4a9'}}>INGREDIENTS</h4>
 
            <div style={{color:'white'}}>{ingredients}</div>
 
